@@ -1,0 +1,15 @@
+<svg width="640" height="220" viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="220" rx="18" fill="#F6F5F1"/>
+  <rect x="24" y="28" width="592" height="164" rx="14" fill="#FFFFFF" stroke="#E8E6DE"/>
+  <rect x="72" y="84" width="30" height="84" rx="5" fill="#2E2E2E"/>
+  <rect x="109" y="70" width="28" height="98" rx="5" fill="#51514D"/>
+  <rect x="144" y="92" width="30" height="76" rx="5" fill="#777770"/>
+  <rect x="181" y="60" width="27" height="108" rx="5" fill="#989891"/>
+  <rect x="215" y="78" width="32" height="90" rx="5" fill="#B5B4AA"/>
+  <path d="M272 123C272 98.6995 291.699 79 316 79H560V167H316C291.699 167 272 147.301 272 123Z" fill="#FAFAF8" stroke="#E9E7DF"/>
+  <text x="300" y="122" fill="#2E2E2E" font-family="Arial, sans-serif" font-size="20" font-weight="700">Biblioteca</text>
+  <text x="300" y="147" fill="#6D6D67" font-family="Arial, sans-serif" font-size="13">Organiza tus lecturas favoritas</text>
+  <circle cx="544" cy="96" r="12" fill="#DCD9CD"/>
+  <circle cx="568" cy="96" r="12" fill="#CAC6B6"/>
+  <circle cx="592" cy="96" r="12" fill="#B6B1A0"/>
+</svg>
