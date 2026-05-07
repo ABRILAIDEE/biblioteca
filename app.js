@@ -48,18 +48,39 @@ function populateForm(book) {
 
 function createBookRow(book) {
   const row = document.createElement('tr');
-  row.innerHTML = `
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.year}</td>
-    <td>${book.genre}</td>
-    <td>
-      <div class="inline-actions">
-        <button data-action="edit" data-id="${book.id}" type="button">Editar</button>
-        <button data-action="delete" data-id="${book.id}" type="button" class="secondary">Eliminar</button>
-      </div>
-    </td>
-  `;
+  const titleCell = document.createElement('td');
+  titleCell.textContent = book.title;
+
+  const authorCell = document.createElement('td');
+  authorCell.textContent = book.author;
+
+  const yearCell = document.createElement('td');
+  yearCell.textContent = String(book.year);
+
+  const genreCell = document.createElement('td');
+  genreCell.textContent = book.genre;
+
+  const actionsCell = document.createElement('td');
+  const actionsContainer = document.createElement('div');
+  actionsContainer.className = 'inline-actions';
+
+  const editButton = document.createElement('button');
+  editButton.type = 'button';
+  editButton.dataset.action = 'edit';
+  editButton.dataset.id = book.id;
+  editButton.textContent = 'Editar';
+
+  const deleteButton = document.createElement('button');
+  deleteButton.type = 'button';
+  deleteButton.dataset.action = 'delete';
+  deleteButton.dataset.id = book.id;
+  deleteButton.className = 'secondary';
+  deleteButton.textContent = 'Eliminar';
+
+  actionsContainer.append(editButton, deleteButton);
+  actionsCell.appendChild(actionsContainer);
+
+  row.append(titleCell, authorCell, yearCell, genreCell, actionsCell);
 
   return row;
 }
@@ -84,9 +105,13 @@ form.addEventListener('submit', (event) => {
     id: currentId || crypto.randomUUID(),
     title: titleInput.value.trim(),
     author: authorInput.value.trim(),
-    year: yearInput.value.trim(),
+    year: Number.parseInt(yearInput.value, 10),
     genre: genreInput.value.trim()
   };
+
+  if (Number.isNaN(bookData.year)) {
+    return;
+  }
 
   if (currentId) {
     const index = books.findIndex((book) => book.id === currentId);
