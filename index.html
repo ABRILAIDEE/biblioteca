@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca CRUD</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Gestión de Libros</h1>
+      <section class="hero card">
+        <img
+          class="hero-image"
+          src="./assets/libros-ilustracion.svg"
+          alt="Ilustración de libros"
+          width="640"
+          height="220"
+        />
+      </section>
+
+      <section class="card">
+        <h2 id="form-title">Registrar libro</h2>
+        <form id="book-form">
+          <input type="hidden" id="book-id" />
+          <div class="grid">
+            <label>
+              Título
+              <input id="title" name="title" type="text" required />
+            </label>
+            <label>
+              Autor
+              <input id="author" name="author" type="text" required />
+            </label>
+            <label>
+              Año
+              <input id="year" name="year" type="number" min="0" required />
+            </label>
+            <label>
+              Género
+              <input id="genre" name="genre" type="text" required />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit" id="save-btn">Guardar</button>
+            <button type="button" id="cancel-btn" class="secondary hidden">Cancelar edición</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Listado de libros</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Año</th>
+                <th>Género</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="books-table-body"></tbody>
+          </table>
+        </div>
+        <p id="empty-message">Aún no hay libros registrados.</p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
